@@ -194,8 +194,9 @@ function rovarspraket('phrase'){
 // ---------------------
 
 uses .join('')
-function reverse(){
-    //...
+
+function reverse(string){
+    return string.split('').reverse().join('');
 }
 
 // ---------------------
@@ -204,8 +205,9 @@ function reverse(){
 
 
 
-    function findLongestWord(words){
-      words.forEach(function(i){
+    function findLongestWord(array){
+
+      array.forEach(function(i){
       console.log(i.length);
       });
       }
@@ -216,8 +218,12 @@ function reverse(){
 // ---------------------
 
 function filterLongWords(words, i){
+  words.filter(function(words)
+
+  {return words.length>i});
     //...see above if this needs to be switched
-}
+  }
+
 
 // ---------------------
 // Write a function charFreq() that takes a string and builds a frequency listing of the characters contained in it. Represent the frequency listing as a Javascript object. Try it with something like charFreq("abbabcbdbabdbdbabababcbcbab").
