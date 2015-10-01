@@ -167,6 +167,16 @@ function isVowel(char){
 
 would need more if-then-else statements for capital letters as well, since 'a' !== 'A'
 
+//review from class Oct 1
+
+function isVowel(char){
+  var vowels ='aeiou';
+  if (vowels.indexOf(char)!== -1) {
+    return true;
+  } 
+    return false;
+  }
+
 
 // ---------------------
 // Write a function translate() that will translate a text into "rÃ¶varsprÃ¥ket". That is, double every consonant and place an occurrence of "o" in between. For example, translate("this is fun") should return the string "tothohisos isos fofunon".
@@ -188,6 +198,20 @@ function rovarspraket('phrase'){
     //...
 }
 //"some string".split("");
+
+//from class Oct 1(next day review)
+function rovarspraket(phrase){
+  var chars=phrase.split(''); //no spaces b/w '' b.c don't need space in phrase evaluated
+  var finalPhrase=[];
+  chars.forEach(function(char){
+    if (!isVowel(char) && char!==' '){//check for consonant, check for spaces(' ')
+        finalPhrase.push(char + 'o' + char);
+    }else{//must be a vowel
+        finalPhrase.push(char);
+    }
+  });
+    return finalPhrase.join('');
+}
 
 // ---------------------
 // Define a function reverse() that computes the reversal of a string. For example, reverse("jag testar") should return the string "ratset gaj".
@@ -224,7 +248,15 @@ function filterLongWords(words, i){
     //...see above if this needs to be switched
   }
 
+//review from class Oct 1
 
+function filterLongWords(words, i){
+  var NewArr=words.filter(function(word)){ //filteruses callback method
+    return word.length>i;
+  });
+    return NewArr; //needs to be an array, b/c don't know if result will be a single item 
+
+  }
 // ---------------------
 // Write a function charFreq() that takes a string and builds a frequency listing of the characters contained in it. Represent the frequency listing as a Javascript object. Try it with something like charFreq("abbabcbdbabdbdbabababcbcbab").
 // ---------------------
@@ -232,3 +264,5 @@ function filterLongWords(words, i){
 function charFreq(string){
     //...
 }
+
+//review from class Oct 1
